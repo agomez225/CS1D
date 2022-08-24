@@ -1,3 +1,31 @@
+/*Assignment 1 
+Write a recursive function that takes a string as an argument and 
+returns a TRUE if the string is a palindrome otherwise FALSE is 
+returned.  A palindrome is a string that reads the same forward 
+and backward (dad, mom, radar).  Test with a main program that 
+calls the function.  The main function could solicit for input and 
+terminate after receiving an EOF or one can store the strings in a 
+vector or array.   
+ 
+The recursive function should ignore white spaces, capital letters 
+(case insensitive), and punctuation. For example: “A man a plan a 
+canal Panama” would be a palindrome.   
+ 
+Use paragraphing and comment each logical block of source code. 
+Do not use global variables. Your output should be descriptive. 
+ 
+Use the following input: 
+Was it a cat I saw? 
+A man a plan a canal Panama 
+The rain in Spain 
+radar 
+Saddleback College 
+CS 1D 
+No lemon, no melon 
+Racecar   
+Dad 
+Mom */
+
 #include <bits/stdc++.h>
 #include <iostream>
 
