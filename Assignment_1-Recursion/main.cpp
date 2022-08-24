@@ -50,7 +50,7 @@ int main()
 
     if (palindromeWrapper(sanitized))
     {
-        cout << "\n" << user_input << " is a palidrome\n";
+        cout << "\n\"" << user_input << "\" is a palidrome\n";
     }
     else
     {
