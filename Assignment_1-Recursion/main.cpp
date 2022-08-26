@@ -34,19 +34,22 @@ using namespace std;
 bool palindromeWrapper(string);
 bool subFunc(string, int, int);
 void removeSpace(string &);
-void sanitizeString(string &);
-
+void sanitizeString(vector<string> &);
+void userInput(vector<string> &);
 int main()
 {
 
-    string user_input = "";
+    vector<string> unsanitized_bank;
+
+    userInput(unsanitized_bank);
 
     cout << "Palindrome Checker\n~~~~~~~~~~~~~~~~~~\nEnter a string: ";
-    getline(cin, user_input);
 
-    string sanitized = user_input;
 
-    sanitizeString(sanitized);
+    vector<string> sanitized_bank = unsanitized_bank;
+
+
+    sanitizeString(sanitized_bank);
 
     if (palindromeWrapper(sanitized))
     {
@@ -113,26 +116,53 @@ void removeSpace(string &input)
     }
 }
 
-void sanitizeString(string &input)
+void sanitizeString(vector<string> &input)
 {
-    // Rude awakening that strings in C++ don't have a toLower()
-    transform(input.begin(), input.end(), input.begin(), ::tolower);
-
-
-    removeSpace(input);
-
-    string temp = "";
-
-    // Adds every alphabetic character into a new string, temp
-    for (int i = 0; i < input.size(); ++i)
+    // For each element in the vector
+    for (int i = 0; i < input.size(); i++)
     {
-        if ((input[i] >= 'a' && input[i] <= 'z') || (input[i] >= 'A' && input[i] <= 'Z'))
-        {
-            temp = temp + input[i];
-        }
-    }
 
-    // I have successfully made the string lowercase, removed any nonalphabetic characters,
-    // and removed any spaces
-    input = temp;
+        // Rude awakening that strings in C++ don't have a toLower()
+        // Makes all characters in the string lowercase
+        transform(input[i].begin(), input[i].end(), input[i].begin(), ::tolower);
+
+        // Removes spaces from each element
+        removeSpace(input[i]);
+
+        string temp = "";
+
+        //  For each character in each element, if it is a letter, append it to the temp variable
+        for (int j = 0; j < input[i].length(); i++)
+        {
+            string element = input[i];
+
+            if ((element[j] >= 'a' && element[j] <= 'z') || (element[j] >= 'A' && element[j] <= 'Z'))
+            {
+                temp = temp + input[i].at(j);
+            }
+        }
+        // Now, the temp variable has been cleaned of any nonalphabetic characters
+        input[i].assign(temp);
+
+        // I have successfully made the string lowercase, removed any nonalphabetic characters,
+        // and removed any spaces
+    }
+}
+
+void userInput(vector<string> &list)
+{
+    int amount = 0;
+
+    cout << "How many sentences/words would you like to test? ";
+    cin >> amount;
+    cin.ignore();
+
+    cout << "Enter one sentence/word at a time, separated by hitting Enter: ";
+    for (int i = 0; i < amount; i++)
+    {
+        string input = "";
+        getline(cin, input);
+
+        list.push_back(input);
+    }
 }
