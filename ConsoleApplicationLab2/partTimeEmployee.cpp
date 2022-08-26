@@ -1,5 +1,4 @@
 #include <iostream> 
-//#include "inherit2.h" 
 #include "partTimeEmployee.h" 
 using namespace std;
 

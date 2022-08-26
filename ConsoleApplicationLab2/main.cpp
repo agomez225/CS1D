@@ -3,12 +3,7 @@
 //============================================================ 
 
 #include <iostream> 
-
 #include "partTimeEmployee.h"
-//#include "inherit2.h" 
-
-//#include "hello1Function.cpp"
-//#include "hello2Function.cpp"
 using namespace std;
 
 int hello1Function(string name1);
