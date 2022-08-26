@@ -23,7 +23,7 @@ void personType::getName(string& first, string& last)
 	last = lastName;
 }
 
-//constructor with parameters 
+/// Brief constructor with parameters 
 personType::personType(string first, string last)
 
 {
@@ -31,7 +31,7 @@ personType::personType(string first, string last)
 	lastName = last;
 }
 
-personType::personType()   //default constructor 
+personType::personType()   /// Brief default constructor 
 {
 	firstName = "";
 	lastName = "";

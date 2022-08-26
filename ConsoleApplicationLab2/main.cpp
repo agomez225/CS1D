@@ -1,5 +1,8 @@
-// Author: Parsa Banaei and Adrian
-// Description: Hello World in C++ 
+//!  Author: Parsa Banaei and Adrian
+/*!
+  Description: Hello World in C++ 
+*/
+
 //============================================================ 
 
 #include <iostream> 
