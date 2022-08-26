@@ -13,7 +13,7 @@ double partTimeEmployee::calculatePay()
     return (payRate * hoursWorked);
 }
 
-void partTimeEmployee::setNameRateHours(string first,
+void partTimeEmployee::setNameRateHours(string first, 
     string last, double rate, double hours)
 {
     personType::setName(first, last);

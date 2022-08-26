@@ -16,7 +16,7 @@ int main()
 {
 	string name1 = "Parsa";
 	hello1Function(name1);
-	string name2 = "Adrian";
+	string name2 = "Adrian"; 
 	hello2Function(name2);
 
 

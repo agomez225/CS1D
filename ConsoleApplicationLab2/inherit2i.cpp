@@ -13,7 +13,7 @@ void personType::print() const
 
 void personType::setName(string first, string last)
 {
-	firstName = first;
+	firstName = first; 
 	lastName = last;
 }
 

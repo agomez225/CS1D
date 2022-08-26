@@ -15,7 +15,7 @@ public:
         double rate, double hours);
     //Function to set the first name, last name, payRate, 
       //and hoursWorked according to the parameters. 
-      //The parameters first and last are passed to the 
+      //The parameters first and last are passed to the  
       //base class. payRate = pay; hoursWorked = hours; 
 
     partTimeEmployee(string first, string last,
