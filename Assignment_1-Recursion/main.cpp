@@ -1,3 +1,6 @@
+//  Adrian Gomez #1095218
+// 8/26/22 22:30
+
 /*Assignment 1 
 Write a recursive function that takes a string as an argument and 
 returns a TRUE if the string is a palindrome otherwise FALSE is 
@@ -34,47 +37,51 @@ using namespace std;
 bool palindromeWrapper(string);
 bool subFunc(string, int, int);
 void removeSpace(string &);
-void sanitizeString(vector<string> &);
-void userInput(vector<string> &);
+void sanitizeVector(vector<string> &);
+int userInput(vector<string> &);
+
 int main()
 {
 
     vector<string> unsanitized_bank;
 
-    userInput(unsanitized_bank);
+    // amount of words/sentences user is inputting
+    int amount = userInput(unsanitized_bank);
 
-    cout << "Palindrome Checker\n~~~~~~~~~~~~~~~~~~\nEnter a string: ";
-
+    cout << "Palindrome Checker\n~~~~~~~~~~~~~~~~~~\n";
 
     vector<string> sanitized_bank = unsanitized_bank;
 
+    sanitizeVector(sanitized_bank);
 
-    sanitizeString(sanitized_bank);
+    // for each words/sentence that the user inputted
+    for (int i = 0; i < amount; i++)
+    {
 
-    if (palindromeWrapper(sanitized))
-    {
-        cout << "\n\"" << user_input << "\" is a palidrome\n";
-    }
-    else
-    {
-        cout << "\n" << user_input << " is not a palidrome\n";
+        if (sanitized_bank[i].size() == 0)
+        {
+            cout << "Element " << i + 1 << " is empty";
+        }
+
+        else if (palindromeWrapper(sanitized_bank[i]))
+        {
+            cout << "\n\"" << unsanitized_bank[i] << "\" is a palidrome\n";
+        }
+        else
+        {
+            cout << "\n\"" << unsanitized_bank[i] << "\" is not a palidrome\n";
+        }
     }
 }
 
+// The purpose of this function is to pass the size of each element into subFunc(),
+// which is the recursive function that actually does the checking
 bool palindromeWrapper(string input)
 {
     int n = input.size();
 
-    if (n == 0)
-    {
-        cout << "String cannot be empty";
-        return false;
-    }
 
-    else
-    {
-        return subFunc(input, (0), n - 1);
-    }
+    return subFunc(input, (0), n - 1);
 }
 
 bool subFunc(string input, int firstIt, int lastIt)
@@ -116,7 +123,7 @@ void removeSpace(string &input)
     }
 }
 
-void sanitizeString(vector<string> &input)
+void sanitizeVector(vector<string> &input)
 {
     // For each element in the vector
     for (int i = 0; i < input.size(); i++)
@@ -132,7 +139,7 @@ void sanitizeString(vector<string> &input)
         string temp = "";
 
         //  For each character in each element, if it is a letter, append it to the temp variable
-        for (int j = 0; j < input[i].length(); i++)
+        for (int j = 0; j < input[i].length(); j++)
         {
             string element = input[i];
 
@@ -149,7 +156,7 @@ void sanitizeString(vector<string> &input)
     }
 }
 
-void userInput(vector<string> &list)
+int userInput(vector<string> &list) // Returns the amount of words/sentences to main()
 {
     int amount = 0;
 
@@ -157,12 +164,16 @@ void userInput(vector<string> &list)
     cin >> amount;
     cin.ignore();
 
-    cout << "Enter one sentence/word at a time, separated by hitting Enter: ";
+
     for (int i = 0; i < amount; i++)
     {
+        cout << "Enter one sentence/word at a time, separated by hitting Enter: ";
+
         string input = "";
         getline(cin, input);
 
         list.push_back(input);
     }
+
+    return amount;
 }
