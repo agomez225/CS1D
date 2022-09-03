@@ -1,0 +1,1 @@
+This folder stores the contents of Lab 2, which was a strange lab to begin with. Everything in adrian-branch/ is almost identical to what is in html/ because we used doxygen to create documentation on the same files that were assigned to us.
