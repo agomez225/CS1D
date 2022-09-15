@@ -1,6 +1,5 @@
-#include "StackFuncs.h"
 #include "StackFuncs.cpp"
-#include "QueueFuncs.h"
+#include "QueueFuncs.cpp"
 
 
 
